@@ -55,6 +55,15 @@ chmod +x /bin/PackSSH
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/ferramentas -O /bin/ferramentas
 chmod +x /bin/ferramentas
 
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimpadorCache -O /bin/ClearCache
+chmod +x /bin/ClearCache
+
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenUdp -O /bin/OpenUDP
+chmod +x /bin/OpenUDP
+
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserBackup -O /bin/UserBackup
+chmod +x /bin/UserBackup
+
 clear
 
 
