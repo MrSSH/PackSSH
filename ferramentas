@@ -32,8 +32,8 @@ echo -e "|01| \033[01;34mLIMPAR CACHE\033[01;34m"
 echo -e "|02| \033[01;34mGERENCIADOR BACKUP DE USUARIOS\033[01;34m"
 echo -e "|03| \033[01;34mBAD UDP\033[01;34m"
 echo -e "|04| \033[01;34mTESTE DE CONEXAO\033[01;34m"
-
-
+echo -e "|05| \033[01;34mCONFIGURAR SQUID 3\033[01;34m"
+echo -e "|06| \033[01;34mCONFIGURAR OPENVPN\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
@@ -61,6 +61,11 @@ case $opcao in
   
  04)
   SpeedTest
+  sleep 1
+  ferramentas;;
+  
+ 05)
+  Squid3
   sleep 1
   ferramentas;;
   
