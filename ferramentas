@@ -68,5 +68,8 @@ case $opcao in
   Squid3
   sleep 3
   ferramentas;;
-  
+ 06)
+  OpenVPN
+  sleep 3
+  ferramentas;;
   esac
