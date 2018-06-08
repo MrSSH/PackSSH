@@ -67,6 +67,9 @@ chmod +x /bin/UserBackup
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/Squid3 -O /bin/Squid3
 chmod +x /bin/Squid3
 
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenVPN -O /bin/OpenVPN
+chmod +x /bin/OpenVPN
+
 clear
 
 
