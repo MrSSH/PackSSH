@@ -64,6 +64,9 @@ chmod +x /bin/OpenUDP
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserBackup -O /bin/UserBackup
 chmod +x /bin/UserBackup
 
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/Squid3 -O /bin/Squid3
+chmod +x /bin/Squid3
+
 clear
 
 
