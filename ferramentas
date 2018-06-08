@@ -41,9 +41,9 @@ read -p "[00-02]: " opcao
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 case $opcao in
  00)
-  PackSSH
-  sleep 1
+  PackSSH;;
   
+ 
  01)
   ClearCache
   sleep 1
@@ -57,11 +57,11 @@ case $opcao in
  03)
   OpenUDP
   sleep 1
-  PackSSH;;
+  ferramentas;;
   
  04)
   SpeedTest
   sleep 1
-  PackSSH;;
+  ferramentas;;
   
   esac
