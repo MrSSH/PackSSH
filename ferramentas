@@ -48,7 +48,6 @@ case $opcao in
   ClearCache
   sleep 1
   ferramentas;;
-  esac
   
  02)
   UserBackup
@@ -64,3 +63,5 @@ case $opcao in
   SpeedTest
   sleep 1
   PackSSH;;
+  
+  esac
