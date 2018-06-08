@@ -32,8 +32,9 @@ echo -e "|01| \033[01;34mLIMPAR CACHE\033[01;34m"
 echo -e "|02| \033[01;34mGERENCIADOR BACKUP DE USUARIOS\033[01;34m"
 echo -e "|03| \033[01;34mBAD UDP\033[01;34m"
 echo -e "|04| \033[01;34mTESTE DE CONEXAO\033[01;34m"
-echo -e "|05| \033[01;34mCONFIGURAR SQUID 3\033[01;34m"
-echo -e "|06| \033[01;34mCONFIGURAR OPENVPN\033[01;34m"
+echo -e "|05| \033[01;34mUSO DE CPU, RAM e PROCESSOS DA MAQUINA\033[01;34m"
+echo -e "|06| \033[01;34mCONFIGURAR SQUID 3\033[01;34m"
+echo -e "|07| \033[01;34mCONFIGURAR OPENVPN\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
@@ -65,10 +66,14 @@ case $opcao in
   ferramentas;;
   
  05)
+  htop
+  
+ 06)
   Squid3
   sleep 3
   ferramentas;;
- 06)
+  
+ 07)
   OpenVPN
   sleep 3
   ferramentas;;
