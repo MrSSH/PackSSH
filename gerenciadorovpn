@@ -17,8 +17,8 @@ azulClaro="\033[1;34m"
 purpleClaro="\033[1;35m"
 cyanClaro="\033[1;36m"
 branco="\033[1;37m"
-
-
+mkdir arquivosopen
+clear
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[47;30m             GERENCIADOR DE USUARIOS OVPN               \033[0m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
@@ -77,7 +77,7 @@ case $opcao in
 	newclient "$CLIENT"
 	echo ""
         arquivo=($CLIENT.ovpn)
-        mv /root/$arquivo /root/
+        mv /root/$arquivo /root/arquivosopen
 	useradd -M -s /bin/false -d /home/opencliente/ $CLIENT
 	clear
         echo "-------------------------------------------"
@@ -117,7 +117,7 @@ case $opcao in
         echo "$CLIENT $validade">> /root/openclientes.db
 	echo "$CLIENT $validade">> /etc/haboryn/backupOpenclientes.db
         echo "O Certificado do usuário $CLIENT está disponível em /root/$CLIENT.ovpn"
-        echo "Para verificar basta digitar: ls /root/"
+        echo "Para verificar basta digitar: ls /root/arquivosopen"
         echo "Para pegar este arquivo.ovpn use comandos ou aplicativos SFTP"
         echo " "
         echo "--------------------------------------------"
