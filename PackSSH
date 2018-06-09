@@ -43,4 +43,7 @@ case $opcao in
  02)
   gerenciarusers;;
  
+ 
+ 03)
+  gereciadorovpn;;
 esac
