@@ -22,7 +22,7 @@ apt-get install python-pip -y &>/dev/null && echo -e '[=====     ] Progresso'
 pip install speedtest-cli &>/dev/null && echo -e '[======    ] Progresso'
 apt-get install nethogs -y &>/dev/null && echo -e '[=======   ] Progresso'
 apt-get install nload &>/dev/null && echo -e '[========  ] Progresso'
-iptables -F &>/dev/null && echo -e '[========== ] Progresso'
+iptables -F &>/dev/null && echo -e '[========= ] Progresso'
 apt-get install -y python3-pip &>/dev/null && echo -e '[==========] Progresso'
 sleep 2
 
