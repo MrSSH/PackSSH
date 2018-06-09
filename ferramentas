@@ -106,7 +106,8 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   ferramentas;;
   
   05)
-  htop;;
+  htop
+  ferramentas;;
   
   06)
   Squid3
@@ -114,7 +115,8 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   ferramentas;;
   
   07)
-  OpenVPN;;
+  OpenVPN
+  ferramentas;;
   
   08)
   addhost
