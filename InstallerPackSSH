@@ -14,16 +14,16 @@ sleep 5
 tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "INSTALANDO PACKSSH" ; tput sgr0
 echo -e "\033[1;34mINSTALANDO...\033[1;32m"
 
-apt-get update &>/dev/null && echo -e '[=         ] Progresso'
-apt-get install bc &>/dev/null && echo -e '[==        ] Progresso'
-apt-get install nano &>/dev/null && echo -e '[===       ] Progresso'
-apt-get install htop &>/dev/null && echo -e '[====      ] Progresso'
-apt-get install python-pip -y &>/dev/null && echo -e '[=====     ] Progresso'
-pip install speedtest-cli &>/dev/null && echo -e '[======    ] Progresso'
-apt-get install nethogs -y &>/dev/null && echo -e '[=======   ] Progresso'
-apt-get install nload &>/dev/null && echo -e '[========  ] Progresso'
-iptables -F &>/dev/null && echo -e '[========= ] Progresso'
-apt-get install -y python3-pip &>/dev/null && echo -e '[==========] Progresso'
+apt-get update &>/dev/null && echo -e '[=         ][10%] Progresso'
+apt-get install bc &>/dev/null && echo -e '[==        ][20%] Progresso'
+apt-get install nano &>/dev/null && echo -e '[===       ][30%] Progresso'
+apt-get install htop &>/dev/null && echo -e '[====      ][40%] Progresso'
+apt-get install python-pip -y &>/dev/null && echo -e '[=====     ][50%] Progresso'
+pip install speedtest-cli &>/dev/null && echo -e '[======    ][60%] Progresso'
+apt-get install nethogs -y &>/dev/null && echo -e '[=======   ][70%] Progresso'
+apt-get install nload &>/dev/null && echo -e '[========  ][80%] Progresso'
+iptables -F &>/dev/null && echo -e '[========= ][90%] Progresso'
+apt-get install -y python3-pip &>/dev/null && echo -e '[==========][100%] Progresso'
 sleep 2
 
 
