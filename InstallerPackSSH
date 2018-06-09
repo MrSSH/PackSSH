@@ -14,16 +14,17 @@ sleep 5
 tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "INSTALANDO PACKSSH" ; tput sgr0
 echo -e "\033[1;34m INSTALANDO...\033[1;32m"
 
-apt-get update &>/dev/null && echo -e '1/10'
-apt-get install bc &>/dev/null && echo -e '2/10'
-apt-get install nano &>/dev/null && echo -e '3/10'
-apt-get install htop &>/dev/null && echo -e '4/10'
-apt-get install python-pip -y &>/dev/null && echo -e '5/10'
-pip install speedtest-cli &>/dev/null && echo -e '6/10'
-apt-get install nethogs -y &>/dev/null && echo -e '7/10'
-apt-get install nload &>/dev/null && echo -e '8/10'
-iptables -F &>/dev/null && echo -e '9/10'
-apt-get install -y python3-pip &>/dev/null && echo -e '10/10'
+apt-get update &>/dev/null && echo -e '[=         ] Progresso'
+apt-get install bc &>/dev/null && echo -e '[==        ] Progresso'
+apt-get install nano &>/dev/null && echo -e '[===       ] Progresso'
+apt-get install htop &>/dev/null && echo -e '[====      ] Progresso'
+apt-get install python-pip -y &>/dev/null && echo -e '[=====     ] Progresso'
+pip install speedtest-cli &>/dev/null && echo -e '[======    ] Progresso'
+apt-get install nethogs -y &>/dev/null && echo -e '[=======   ] Progresso'
+apt-get install nload &>/dev/null && echo -e ''[========  ] Progresso'
+iptables -F &>/dev/null && echo -e '[========== ] Progresso'
+apt-get install -y python3-pip &>/dev/null && echo -e '[==========Progresso'
+sleep2
 
 
 wget https://raw.githubusercontent.com/JorisBRA/jorisBra/master/TesteConexao -O /bin/SpeedTest
@@ -55,6 +56,9 @@ chmod +x /bin/UserCreate
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciarusers -O /bin/gerenciarusers
 chmod +x /bin/gerenciarusers
+
+wget hhttps://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciaropvn
+chmod +x /bin/gerenciarovpn
 
 
 clear
