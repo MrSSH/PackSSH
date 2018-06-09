@@ -20,7 +20,7 @@ branco="\033[1;37m"
 
 
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
-echo -e "\033[47;30m               GERENCIADOR DE USUARIOS                  \033[0m"
+echo -e "\033[47;30m             GERENCIADOR DE USUARIOS SSH                \033[0m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 monitorar=$(ps x | grep "sshd:" | wc -l)
 resultado=$(($monitorar-1))
@@ -29,10 +29,10 @@ echo -e "\033[0;32m_________________________________________________________\033
 echo -e "\033[01;34m\033[01;34m"
 echo -e "|00| \033[01;34mVOLTAR AO MENU\033[01;34m"
 echo -e "|01| \033[01;34mCRIAR USUARIO SSH\033[01;34m"
-echo -e "|02| \033[01;34mREMOVER USUARIO\033[01;34m"
-echo -e "|03| \033[01;34mMUDAR VALIDADE DO USUARIO\033[01;34m"
-echo -e "|04| \033[01;34mMUDAR LIMITE DE CONEXAO POR USUARIO\033[01;34m"
-echo -e "|05| \033[01;34mLIMPAR USUARIOS VENCIDOS\033[01;34m"
+echo -e "|02| \033[01;34mREMOVER USUARIO SSH\033[01;34m"
+echo -e "|03| \033[01;34mMUDAR VALIDADE DO USUARIO SSH\033[01;34m"
+echo -e "|04| \033[01;34mMUDAR LIMITE DE CONEXAO POR USUARIO SSH\033[01;34m"
+echo -e "|05| \033[01;34mLIMPAR USUARIOS VENCIDOS SSH\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
