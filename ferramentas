@@ -65,8 +65,9 @@ clear
 
 echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   
- 02)
-tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "Gerenciador Backup de Usuários" ; tput sgr0
+02)
+
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "Gerenciador Backup de Usuarios" ; tput sgr0
 echo "O que deseja fazer?"
 echo ""
 echo "1 - CRIAR BACKUP"
