@@ -68,6 +68,7 @@ case $opcao in
   
  05)
   htop
+  sleep 1
   
  06)
   Squid3
