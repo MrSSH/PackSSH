@@ -56,8 +56,8 @@ case $opcao in
 	clear
 	OpenUDP;;
 02)
-sudo screen -dmS badudp;;
-
+sudo screen -dmS badudp
+OpenUDP;;
 03)
 ferramentas;;
 
