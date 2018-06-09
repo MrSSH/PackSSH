@@ -126,7 +126,7 @@ case $opcao in
         echo "IP do servidor: $IP"
         echo "--------------------------------------------"
   sleep 1
-  gerenciarovpn;;
+  gerenciadorovpn;;
   
   02)
   
