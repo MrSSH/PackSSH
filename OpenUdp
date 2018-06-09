@@ -1,13 +1,23 @@
 #!/bin/bash
-
+clear
+echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo "Este é um script que compila e instala automaticamente o programa"
 echo "BadVPN em servidores Debian e Ubuntu para ativar o encaminhamento UDP"
 echo "na porta 7300, usado por programas como HTTP Injector da Evozi."
 echo "Permitindo assim a utilização do protocolo UDP para jogos online,"
 echo "chamadas VoIP e outras coisas interessantes."
-echo "" ; tput sgr0
-read -p "Deseja continuar? [s/n]: " -e -i n resposta
-if [[ "$resposta" = 's' ]]; then
+echo -e "\033[0;32m_________________________________________________________\033[0;32m"
+echo -e "\033[01;34m\033[01;34m"
+echo -e "|01| \033[01;34mCOPILAR E INSTALAR O BAD UDP\033[01;34m"
+echo -e "|02| \033[01;34mINICIAR BAD UDP\033[01;34m"
+echo -e "|03| \033[01;34mVOLTAR AS FERRAMENTAS\033[01;34m"
+echo""
+echo -e "\033[0;32m_________________________________________________________\033[0;32m"
+echo -e "\033[0;31m"
+read -p "[00-03]: " opcao
+echo -e "\033[0;32m_________________________________________________________\033[0;32m"
+case $opcao in
+  00)
 	echo ""
 	echo "Aguarde a instalação... "
 	sleep 3
@@ -44,9 +54,11 @@ if [[ "$resposta" = 's' ]]; then
 	sudo screen -dmS badudp
 	sleep 2
 	clear
+	OpenUDP;;
+02)
+sudo screen -dmS badudp;;
 
-else 
-	echo ""
-	exit
-fi
-fi
+03)
+ferramentas;;
+
+esac
