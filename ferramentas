@@ -20,11 +20,11 @@ branco="\033[1;37m"
 
 
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
-echo -e "\033[47;30m                      FERRAMENTAS                       \033[0m"
+echo -e "\033[47;30m                       FERRAMENTAS                      \033[0m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
-_PORTAS=$(lsof -V -i tcp -P -n | grep "LISTEN" | cut -d: -f2 | cut -d' ' -f1 | uniq)
-for _PORTA in ${_PORTAS[@]}; do
-tput setaf 2 ; tput bold ; printf '%-10s%-10s%-10s\n' "Porta: " "${_PORTA}" "ON"
+monitorar=$(ps x | grep "sshd:" | wc -l)
+resultado=$(($monitorar-1))
+echo -e "\033[0mTOTAL DE USUARIOS CONECTADOS:\033[1;31m $resultado \033[0m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[01;34m\033[01;34m"
 echo -e "|00| \033[01;34mVOLTAR AO MENU\033[01;34m"
@@ -38,12 +38,223 @@ echo -e "|07| \033[01;34mCONFIGURAR OPENVPN\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
-read -p "[00-07]: " opcao
+read -p "[00-05]: " opcao
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 case $opcao in
  00)
   PackSSH;;
   
  
+ 01)
+  UserCreate
+  sleep 4
+  gerenciarusers;;
+  
+ 02)
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%32s%s%-13s\n' "Remover Usuário SSH" ; tput sgr0
+echo ""
+tput bold ; echo "Lista de usuários:" ; echo "" ; tput sgr0
+tput setaf 3 ; tput bold ; awk -F : '$3 >= 500 { print $1 }' /etc/passwd | grep -v '^nobody' ; tput sgr0
+echo ""
+read -p "Nome do usuário para remover: " user
+if [[ -z $user ]]
+then
+	tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "Você digitou um nome de usuário vazio ou inválido!" ; echo "" ; tput sgr0
+	exit 1
+else
+	if [[ `grep -c /$user: /etc/passwd` -ne 0 ]]
+	then
+		ps x | grep $user | grep -v grep | grep -v pt > /tmp/rem
+		if [[ `grep -c $user /tmp/rem` -eq 0 ]]
+		then
+			deluser $user > /dev/null
+			tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "O usuário $user foi removido com sucesso!" ; echo "" ; tput sgr0
+			grep -v ^$user[[:space:]] /root/usuarios.db > /tmp/ph ; cat /tmp/ph > /root/usuarios.db
+			exit 1
+		else
+			tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "Desconectando Usuario..." ; tput sgr0
+			pkill -f "$user"
+			deluser $user > /dev/null
+			tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "O usuário $user foi removido com sucesso!" ; echo "" ; tput sgr0
+			grep -v ^$user[[:space:]] /root/usuarios.db > /tmp/ph ; cat /tmp/ph > /root/usuarios.db
+			exit 1
+		fi
+	else
+		tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "O usuário $user não existe!" ; echo "" ; tput sgr0
+	fi
+fi
+sleep 1
+gerenciarusers;;
 
+03)
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%33s%s%-12s\n' "Mudar Data de Validade do Usuario" ; tput sgr0
+echo ""
+tput bold ; echo "Lista de usuários e datas de expiração:" ; tput sgr0
+echo ""
+tput setaf 3 ; tput bold 
+awk -F : '$3 >= 500 { print $1 }' /etc/passwd | grep -v '^nobody' | while read user
+  do
+	expire="$(chage -l $user | grep -E "Account expires" | cut -d ' ' -f3-)"
+	if [[ $expire == "never" ]]
+	then
+		nunca="Nunca"
+		printf '  %-30s%s\n' "$user" "Nunca"
+	else
+		databr="$(date -d "$expire" +"%Y%m%d")"
+		hoje="$(date -d today +"%Y%m%d")"
+		if [ $hoje -ge $databr ]
+		then
+			datanormal="$(date -d"$expire" '+%d/%m/%Y')"
+			printf '  %-30s%s' "$user" "$datanormal" ; tput setaf 1 ; tput bold ; echo " (Expirado)" ; tput setaf 3
+			echo "exp" > /tmp/exp
+		else
+			datanormal="$(date -d"$expire" '+%d/%m/%Y')"
+			printf '  %-30s%s\n' "$user" "$datanormal"
+		fi
+	fi
+  done
+tput sgr0
+echo ""
+if [ -a /tmp/exp ]
+then
+	tput setaf 2 ; tput bold ; echo "Para remover todos os usuários expirados use o comando: expcleaner" ; echo "" ; tput sgr0
+	rm /tmp/exp
+fi
+read -p "Nome do usuário para alterar a data de expiração: " usuario
+if [[ -z $usuario ]]
+then
+	echo ""
+	tput setaf 8 ; tput setab 5 ; tput bold ; echo "Você digitou um nome de usuário vazio ou inválido!" ; tput sgr0
+	echo ""
+	exit 1
+else
+	if [[ `grep -c /$usuario: /etc/passwd` -ne 0 ]]
+	then
+		read -p "Digite uma nova data de expiração (DIA/MÊS/ANO): " inputdate
+		sysdate="$(echo "$inputdate" | awk -v FS=/ -v OFS=- '{print $3,$2,$1}')"
+		if (date "+%Y-%m-%d" -d "$sysdate" > /dev/null  2>&1)
+		then
+			if [[ -z $inputdate ]]
+			then
+				echo ""
+				tput setaf 8 ; tput setab 5 ; tput bold ;	echo "Você digitou uma data inválida ou inexistente!" ; echo "Digite uma data válida no formato DIA/MÊS/ANO" ; echo "Por exemplo: 21/04/2018" ; tput sgr0
+				echo ""
+				exit 1	
+			else
+				if (echo $inputdate | egrep [^a-zA-Z] &> /dev/null)
+				then
+					today="$(date -d today +"%Y%m%d")"
+					timemachine="$(date -d "$sysdate" +"%Y%m%d")"
+					if [ $today -ge $timemachine ]
+					then
+						echo ""
+						tput setaf 8 ; tput setab 5 ; tput bold ;	echo "Você digitou uma data passada ou o dia atual!" ; echo "Digite uma data futura e válida no formato DIA/MÊS/ANO" ; echo "Por exemplo: 21/04/2018" ; tput sgr0
+						echo ""
+						exit 1
+					else
+						chage -E $sysdate $usuario
+						echo ""
+						tput setaf 7 ; tput setab 1 ; tput bold ; echo "A data de expiração do usuário $usuario foi alterada para: $inputdate" ; tput sgr0
+						echo ""
+						exit 1
+					fi
+				else
+					echo ""
+					tput setaf 8 ; tput setab 5 ; tput bold ;	echo "Você digitou uma data inválida ou inexistente!" ; echo "Digite uma data válida no formato DIA/MÊS/ANO" ; echo "Por exemplo: 21/04/2018" ; tput sgr0
+					echo ""
+					exit 1
+				fi
+			fi
+		else
+			echo ""
+			tput setaf 8 ; tput setab 5 ; tput bold ;	echo "Você digitou uma data inválida ou inexistente!" ; echo "Digite uma data válida no formato DIA/MÊS/ANO" ; echo "Por exemplo: 21/04/2018" ; tput sgr0
+			echo ""
+			exit 1
+		fi
+	else
+		echo " "
+		tput setaf 8 ; tput setab 5 ; tput bold ;	echo "O usuário $usuario não existe!" ; tput sgr0
+		echo " "
+		exit 1
+	fi
+fi
+sleep 3
+gerenciarusers;;
+
+04)
+database="/root/usuarios.db"
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%20s%s\n' "   Alterar o Limite de Usuários Permitidos Por Loguin   " ; tput sgr0
+if [ ! -f "$database" ]
+then
+	tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "Arquivo $database não encontrado" ; echo "" ; tput sgr0
+	exit 1
+else
+	tput setaf 2 ; tput bold ; echo ""; echo "Limite de conexões simultâneas dos usuários:" ; tput sgr0
+	tput setaf 3 ; tput bold ; echo "" ; cat $database ; echo "" ; tput sgr0
+	read -p "Nome de usuário para alterar o limite: " usuario
+	if [[ -z $usuario ]]
+	then
+		tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "Você digitou um nome de usuário vazio ou não existente na lista!" ; echo "" ; tput sgr0
+		exit 1
+	else
+		if [[ `grep -c "^$usuario " $database` -gt 0 ]]
+		then
+			read -p "Número de conexões simultâneas permitidas para o usuário: " sshnum
+			if [[ -z $sshnum ]]
+			then
+				tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "Você digitou um número inválido!" ; echo "" ; tput sgr0
+				exit 1
+			else
+				if (echo $sshnum | egrep [^0-9] &> /dev/null)
+				then
+					tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "Você digitou um número inválido!" ; echo "" ; tput sgr0
+					exit 1
+				else
+					if [[ $sshnum -lt 1 ]]
+					then
+						tput setaf 8 ; tput setab 5 ; tput bold ; echo "" ; echo "Você deve digitar um número de conexões simultâneas maior que zero!" ; echo "" ; tput sgr0
+						exit 1
+					else
+						grep -v ^$usuario[[:space:]] /root/usuarios.db > /tmp/a
+						sleep 1
+						mv /tmp/a /root/usuarios.db
+						echo $usuario $sshnum >> /root/usuarios.db
+						tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "O número de conexões simultâneas permitidas para o usuário $usuario foi alterado:" ; tput sgr0
+						tput setaf 3 ; tput bold ; echo "" ; cat $database ; echo "" ; tput sgr0
+						exit
+					fi
+				fi
+			fi			
+		else
+			tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "O usuário $usuario não foi encontrado na lista!" ; echo "" ; tput sgr0
+			exit 1
+		fi
+	fi
+fi
+sleep 3
+gerenciadoruser;;
+
+05)
+datenow=$(date +%s)
+tput setaf 8 ; tput setab 5 ; tput bold ; printf '%45s%-10s%-5s\n' "Removedor de contas expiradas" ""
+printf '%-20s%-25s%-20s\n' "Usuário" "Data de expiração" "Estado/Ação" ; echo "" ; tput sgr0
+for user in $(awk -F: '{print $1}' /etc/passwd); do
+	expdate=$(chage -l $user|awk -F: '/Account expires/{print $2}')
+	echo $expdate|grep -q never && continue
+	datanormal=$(date -d"$expdate" '+%d/%m/%Y')
+	tput setaf 3 ; tput bold ; printf '%-20s%-21s%s' $user $datanormal ; tput sgr0
+	expsec=$(date +%s --date="$expdate")
+	diff=$(echo $datenow - $expsec|bc -l)
+	tput setaf 2 ; tput bold
+	echo $diff|grep -q ^\- && echo "Ativo (Não removido)" && continue
+	tput setaf 1 ; tput bold
+	echo "Expirado (Removido)"
+	pkill -f $user
+	userdel $user
+	grep -v ^$user[[:space:]] /root/usuarios.db > /tmp/ph ; cat /tmp/ph > /root/usuarios.db
+done
+tput sgr0 
+echo ""
+sleep 1
+gerenciadorusers;;
 esac
