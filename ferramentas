@@ -116,6 +116,7 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   
   07)
   OpenVPN
+  sleep 5
   ferramentas;;
   
   08)
