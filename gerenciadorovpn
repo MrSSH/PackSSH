@@ -240,13 +240,12 @@ case $opcao in
 		echo "-----------------------------------------------------------"
 
 	fi
-else
         clear
 	echo "---------------"
 	echo "opção invalida!"
 	echo "---------------"
         clear
-fi
+	
 sleep 2
 gerenciadorovpn;;
 
