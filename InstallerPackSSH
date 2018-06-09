@@ -70,6 +70,10 @@ chmod +x /bin/Squid3
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenVPN -O /bin/OpenVPN
 chmod +x /bin/OpenVPN
 
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserCreate -O /bin/UserCreate
+chmod +x /bin/UserCreate
+
+
 clear
 
 
