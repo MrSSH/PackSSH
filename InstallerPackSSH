@@ -57,7 +57,7 @@ chmod +x /bin/UserCreate
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciarusers -O /bin/gerenciarusers
 chmod +x /bin/gerenciarusers
 
-wget hhttps://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciadorovpn
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciadorovpn
 chmod +x /bin/gerenciadorovpn
 
 
