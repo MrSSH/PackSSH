@@ -14,9 +14,11 @@ sleep 5
 tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "INSTALANDO PACKSSH" ; tput sgr0
 echo -e "\033[1;34m INSTALANDO...\033[1;32m"
 
-apt-get update
-apt-get install bc 
-apt-get install nano
+apt-get update &>/dev/null && echo -e '10%'
+clear
+apt-get install bc &>/dev/null && echo -e '20%'
+clear
+apt-get install nano &>/dev/null && echo -e '30%'
 apt-get install htop
 clear
 apt-get install python-pip -y
@@ -25,7 +27,6 @@ apt-get install nethogs -y
 apt-get install nload
 iptables -F
 speep 1
-apt-get update
 apt-get install -y python3-pip
 
 
