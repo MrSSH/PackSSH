@@ -96,7 +96,5 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   ferramentas;;
 
  03)
-  OpenUDP
-  sleep 1
-  ferramentas;;
+  OpenUDP;;
 esac
