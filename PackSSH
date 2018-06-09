@@ -37,10 +37,10 @@ read -p "[00-03]: " opcao
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 case $opcao in
  01)
-  ferramentas
-  sleep 1
+  ferramentas;;
+ 
   
  02)
-  gerenciarusers
-  sleep 1
+  gerenciarusers;;
+ 
 esac
