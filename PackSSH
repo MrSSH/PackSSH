@@ -45,5 +45,5 @@ case $opcao in
  
  
  03)
-  gereciadorovpn;;
+  gerenciadorovpn;;
 esac
