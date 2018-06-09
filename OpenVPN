@@ -135,7 +135,7 @@ clear
 	echo "Okay, você está pronto para executar o openvpn "
 	read -n1 -r -p "Pressione uma tecla para continuar..."
 	if [[ "$OS" = 'debian' ]]; then
-		apt-get upgrade
+		apt-get upgrade -y
 		apt-get install openvpn iptables openssl ca-certificates -y
 	else
 		# Else, the distro is CentOS
