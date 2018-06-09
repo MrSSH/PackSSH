@@ -19,7 +19,7 @@ cyanClaro="\033[1;36m"
 branco="\033[1;37m"
 
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
-echo -e "\033[47;30m                    PACK SSH v1.0                       \033[0m"
+echo -e "\033[47;30m                    PACK SSH v1.0 Beta                  \033[0m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[47;30mDEVELOPER MRSSH e CO-DEVELOPER GLEMYSSON               \033[1;32m"
 echo -e "\033[0mSISTEMA OPERACIONAL:\033[1;31m $(cat /etc/os-release | grep 'PRETTY_NAME' | cut -d= -f2 | sed 's/\"(*//g')\033[0m"
