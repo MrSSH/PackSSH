@@ -12,7 +12,7 @@ echo -e "\033[1;30m-------------------------------------------------------------
 sleep 5
 
 tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "INSTALANDO PACKSSH" ; tput sgr0
-echo -e "\033[1;34m INSTALANDO...\033[1;32m"
+echo -e "\033[1;34mINSTALANDO...\033[1;32m"
 
 apt-get update &>/dev/null && echo -e '[=         ] Progresso'
 apt-get install bc &>/dev/null && echo -e '[==        ] Progresso'
