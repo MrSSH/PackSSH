@@ -837,3 +837,4 @@ elif [[ "$resposta" = '2' ]]; then
 	echo "---------------"
         clear
 fi
+esac
