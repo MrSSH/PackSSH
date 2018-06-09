@@ -22,9 +22,10 @@ branco="\033[1;37m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[47;30m                      FERRAMENTAS                       \033[0m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
-monitorar=$(ps x | grep "sshd:" | wc -l)
-resultado=$(($monitorar-1))
-echo -e "\033[0mUSUARIOS CONECTADOS:\033[1;31m $resultado \033[0m"
+_PORTAS=$(lsof -V -i tcp -P -n | grep "LISTEN" | cut -d: -f2 | cut -d' ' -f1 | uniq)
+for _PORTA in ${_PORTAS[@]}; do
+tput setaf 2 ; tput bold ; printf '%-10s%-10s%-10s\n' "Porta: " "${_PORTA}" "ON"
+done
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[01;34m\033[01;34m"
 echo -e "|00| \033[01;34mVOLTAR AO MENU\033[01;34m"
@@ -38,7 +39,7 @@ echo -e "|07| \033[01;34mCONFIGURAR OPENVPN\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
-read -p "[00-02]: " opcao
+read -p "[00-07]: " opcao
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 case $opcao in
  00)
