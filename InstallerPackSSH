@@ -15,9 +15,7 @@ tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "INSTALANDO PAC
 echo -e "\033[1;34m INSTALANDO...\033[1;32m"
 
 apt-get update &>/dev/null && echo -e '10%'
-clear
 apt-get install bc &>/dev/null && echo -e '20%'
-clear
 apt-get install nano &>/dev/null && echo -e '30%'
 apt-get install htop
 clear
