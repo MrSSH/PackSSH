@@ -96,5 +96,22 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   ferramentas;;
 
  03)
-  OpenUDP;;
+  OpenUDP
+  ferramentas;;
+  
+  04)
+  SpeedTest
+  sleep 6
+  ferramentas;;
+  
+  05)
+  htop;;
+  
+  06)
+  Squid3
+  sleep 2
+  ferramentas;;
+  
+  07)
+  OpenVPN;;
 esac
