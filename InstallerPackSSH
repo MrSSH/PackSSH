@@ -56,6 +56,9 @@ chmod +x /bin/OpenVPN
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserCreate -O /bin/UserCreate
 chmod +x /bin/UserCreate
 
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciarusers -O /bin/gerenciarusers
+chmod +x /bin/gerenciarusers
+
 
 clear
 
