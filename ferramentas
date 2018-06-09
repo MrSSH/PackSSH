@@ -36,6 +36,7 @@ echo -e "|04| \033[01;34mTESTE DE CONEXAO\033[01;34m"
 echo -e "|05| \033[01;34mUSO DE CPU, RAM e PROCESSOS DA MAQUINA\033[01;34m"
 echo -e "|06| \033[01;34mCONFIGURAR SQUID 3\033[01;34m"
 echo -e "|07| \033[01;34mCONFIGURAR OPENVPN\033[01;34m"
+echo -e "|08| \033[01;34mADICIONAR HOST DA PAYLOAD\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
@@ -114,4 +115,7 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   
   07)
   OpenVPN;;
+  
+  08)
+  addhost;;
 esac
