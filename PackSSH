@@ -38,5 +38,8 @@ case $opcao in
  01)
   ferramentas
   sleep 1
-
+  
+ 02)
+  gerenciarusers
+  sleep 1
 esac
