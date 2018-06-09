@@ -28,11 +28,12 @@ echo -e "\033[0mRAM:\033[1;31m $(free -h | grep -i 'mem:' | awk -F' ' '{print $3
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[01;34m\033[01;34m"
 echo -e "|01| \033[01;34mFERRAMENTAS\033[01;34m"
-echo -e "|02| \033[01;34mGERENCIAR USUARIOS\033[01;34m"
+echo -e "|02| \033[01;34mGERENCIAR USUARIOS SSH\033[01;34m"
+echo -e "|03| \033[01;34mGERENCIAR USUARIOS OPENVPN\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
-read -p "[00-02]: " opcao
+read -p "[00-03]: " opcao
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 case $opcao in
  01)
