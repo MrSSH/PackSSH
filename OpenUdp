@@ -51,11 +51,11 @@ case $opcao in
 	echo "BadVPN instalado com sucesso."
 	echo "INICIANDO UDP"
 	sleep 5
-	sudo screen -dmS badudp
-	sleep 2
 	clear
 	OpenUDP;;
 02)
+echo "INICIANDO O BAD UDP."
+sleep 2
 sudo screen -dmS badudp
 OpenUDP;;
 03)
