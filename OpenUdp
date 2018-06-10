@@ -19,7 +19,9 @@ echo -e "\033[0;32m_________________________________________________________\033
 case $opcao in
   01)
 	echo "Aguarde a instalação... "
-	sleep 3
+	sleep 2
+	echo "INICIANDO A ABERTURA DA PORTA 7300... "
+	sleep 2
 	apt-get update -y
 	apt-get install screen wget gcc build-essential g++ make -y
 	wget http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz
@@ -54,7 +56,7 @@ case $opcao in
 echo "INICIANDO O BAD UDP..."
 sleep 2
 sudo screen -dmS badudp bash badudp
-echo "INICIADO O BAD UDP COM SUCESSO NA PORTA 7300"
+echo "INICIADO O BAD UDP COM SUCESSO"
 SLEEP 3
 OpenUDP;;
 03)
