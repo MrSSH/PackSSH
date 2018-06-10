@@ -57,7 +57,7 @@ echo "INICIANDO O BAD UDP..."
 sleep 2
 sudo screen -dmS badudp bash badudp
 echo "INICIADO O BAD UDP COM SUCESSO"
-SLEEP 3
+sleep 3
 OpenUDP;;
 03)
 ferramentas;;
