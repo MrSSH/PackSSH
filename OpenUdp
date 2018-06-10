@@ -14,11 +14,10 @@ echo -e "|03| \033[01;34mVOLTAR AS FERRAMENTAS\033[01;34m"
 echo""
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[0;31m"
-read -p "[00-03]: " opcao
+read -p "[01-03]: " opcao
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 case $opcao in
-  00)
-	echo ""
+  01)
 	echo "Aguarde a instalação... "
 	sleep 3
 	apt-get update -y
@@ -49,14 +48,14 @@ case $opcao in
 	tput setaf 3 ; tput bold ; echo ""
 	echo ""
 	echo "BadVPN instalado com sucesso."
-	echo "INICIANDO UDP"
 	sleep 5
 	clear
-	OpenUDP;;
+	;;
 02)
-echo "INICIANDO O BAD UDP."
+echo "INICIANDO O BAD UDP"
 sleep 2
-sudo screen -dmS badudp
+sudo screen -dmS badudp bash badudp
+echo "INICIADO O BAD UDP COM SUCESSO"
 OpenUDP;;
 03)
 ferramentas;;
