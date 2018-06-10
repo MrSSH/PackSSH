@@ -46,16 +46,16 @@ case $opcao in
 	chmod +x /bin/badudp
 	clear
 	tput setaf 3 ; tput bold ; echo ""
-	echo ""
-	echo "BadVPN instalado com sucesso."
+	echo "BAD UDP INSTALADO COM SUCESSO."
 	sleep 5
 	clear
 	;;
 02)
-echo "INICIANDO O BAD UDP"
+echo "INICIANDO O BAD UDP..."
 sleep 2
 sudo screen -dmS badudp bash badudp
-echo "INICIADO O BAD UDP COM SUCESSO"
+echo "INICIADO O BAD UDP COM SUCESSO NA PORTA 7300"
+SLEEP 3
 OpenUDP;;
 03)
 ferramentas;;
