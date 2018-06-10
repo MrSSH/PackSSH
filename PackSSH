@@ -28,7 +28,7 @@ echo -e "\033[47;30m                    PACK SSH v1.1 Beta                  \033
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[47;30mDEVELOPER MRSSH e CO-DEVELOPER GLEMYSSON                \033[0m"
 echo -e "\033[0mSISTEMA OPERACIONAL:\033[1;31m $(cat /etc/os-release | grep 'PRETTY_NAME' | cut -d= -f2 | sed 's/\"(*//g')\033[0m"
-echo -e "\033[0mCPU:\033[1;31m $(cat /proc/cpuinfo | grep 'model name' | cut -d: -f2 | sed 's/ //') x$(cat /proc/cpuinfo | grep processor | wc -l)\033[0m"
+echo -e "\033[0mCPU:\033[1;31m $(cat /proc/cpuinfo | grep processor | wc -l)x $(cat /proc/cpuinfo | grep 'model name' | cut -d: -f2 | sed 's/ //')\033[0m"
 echo -e "\033[0mRAM:\033[1;31m TOTAL: $(($totalram / 1024))Mb\033[0m"
 echo -e "\033[1;31m     USADO: $(($usedram / 1024))Mb\033[0m"
 echo -e "\033[1;31m     LIVRE: $(($freeram / 1024))Mb\033[0m"
