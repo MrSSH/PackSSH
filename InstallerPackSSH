@@ -27,7 +27,7 @@ apt-get install -y python3-pip &>/dev/null && echo -e '[==========][100%] Progre
 sleep 2
 
 
-wget https://raw.githubusercontent.com/JorisBRA/jorisBra/master/TesteConexao -O /bin/SpeedTest
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/TesteConexao -O /bin/SpeedTest
 chmod +x /bin/SpeedTest
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimiterSSH -O /bin/LimiterSSH
