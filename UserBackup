@@ -48,3 +48,6 @@ if [[ "$opcao" = '2' ]]; then
 		echo "O arquivo /root/backup.vps não foi encontrado!"
 		echo "Ceritifique-se que ele esteja localizado no diretório /root/ com o nome backup.vps"
 		echo ""
+		exit
+	fi
+fi
