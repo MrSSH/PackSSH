@@ -302,12 +302,12 @@ exit 0' > $RCLOCAL
 	fi
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
-dev tun
 proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 setenv opt method GET
-remote portalrecarga.vivo.com.br/recarga $PORT
+remote /portalrecarga.vivo.com.br/recarga/@phoenix1203 $PORT
+http-proxy-option EXT1 ""Host: portalrecarga.vivo.com.br/recarga""
 http-proxy $IP 80
 resolv-retry infinite
 nobind
