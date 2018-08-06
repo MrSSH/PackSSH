@@ -104,7 +104,7 @@ case $opcao in
 	newclient "$CLIENT"
 	echo ""
         arquivo=($CLIENT.ovpn)
-        mv /root/$arquivo /root/arquivosopen
+        mv /root/arquivosopen/$arquivo 
 	useradd -M -s /bin/false -d /home/opencliente/ $CLIENT
 	clear
         echo "-------------------------------------------"
