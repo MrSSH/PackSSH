@@ -186,7 +186,7 @@ case $opcao in
         arquivo=$('$CLIENT'.ovpn)
         #Deletando Arquivo .ovpn
         arquivo=($CLIENT.ovpn)
-        rm /root/$arquivo
+        rm /root/arquivosopen/$arquivo
 	userdel --force "$CLIENT"
         grep -v ^$CLIENT[[:space:]] /root/openclientes.db > /tmp/haboryn ; cat /tmp/haboryn > /root/openclientes.db
 	grep -v ^$CLIENT[[:space:]] /etc/haboryn/backupOpenclientes.db > /tmp/haboryn ; cat /tmp/haboryn > /etc/haboryn/backupOpenclientes.db
