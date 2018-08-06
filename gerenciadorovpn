@@ -131,7 +131,7 @@ case $opcao in
 	DIAD=$(date +%d)  
 	MESM=$(date +%m)
 	ANOA=$(date +%Y)
-	MESNOVO=$(($MESM+01))
+	MESNOVO=$(expr $MESM + 01)
 	MESNOVOZ=`seq -f "%02g" $MESNOVO $MESNOVO`
 	read -p "Digite o DIA com dois dígitos: " -e -i $DIAD dia
 	echo " "
