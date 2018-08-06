@@ -91,8 +91,9 @@ echo "OpenVPN já está instalado"
 exit	
 fi
 clear
-	echo >> /etc/hosts '127.0.0.1 portalrecarga.vivo.com.br/recarga'
+	echo >> /etc/hosts '127.0.0.1 /portalrecarga.vivo.com.br/recarga/@MrCoppens'
 	echo >> /etc/squid3/payload.txt 'portalrecarga.vivo.com.br/recarga'
+	echo >> /etc/squid3/payload.txt '/portalrecarga.vivo.com.br/recarga/@MrCoppens'
   clear
 	echo 'Bem vindo ao instalador OpenVPN'
 	echo ""
@@ -307,7 +308,7 @@ proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 setenv opt method GET
-remote /portalrecarga.vivo.com.br/recarga/@phoenix1203 $PORT
+remote /portalrecarga.vivo.com.br/recarga/@MrCoppens $PORT
 http-proxy-option EXT1 ""Host: portalrecarga.vivo.com.br/recarga""
 http-proxy $IP 80
 resolv-retry infinite
