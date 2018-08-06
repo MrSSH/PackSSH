@@ -104,7 +104,7 @@ case $opcao in
 	newclient "$CLIENT"
 	echo ""
         arquivo=($CLIENT.ovpn)
-        mv /root/arquivosopen/$arquivo 
+        mv /root/$arquivo /root/arquivosopen
 	useradd -M -s /bin/false -d /home/opencliente/ $CLIENT
 	clear
         echo "-------------------------------------------"
@@ -135,7 +135,7 @@ case $opcao in
 	MESNOVOZ=`seq -f "%02g" $MESNOVO $MESNOVO`
 	read -p "Digite o DIA com dois dígitos: " -e -i $DIAD dia
 	echo " "
-	read -p "Digite o MÊS com dois dígitos: " -e -i $MESNOVOZ mes
+	read -p "Digite o MES com dois dígitos: " -e -i $MESNOVOZ mes
 	echo " "
 	read -p "Digite o ANO com quatro dígitos: " -e -i $ANOA ano
 	usermod -e "$ano"-"$mes"-"$dia" "$CLIENT"
@@ -242,7 +242,7 @@ case $opcao in
 		DIAD=$(date +%d)  
 		MESM=$(date +%m)
        		ANOA=$(date +%Y)
-		MESNOVO=$(($MESM+01))
+		MESNOVO=$(expr $MESM + 01)
 		MESNOVOZ=`seq -f "%02g" $MESNOVO $MESNOVO`
 		read -p "Digite o DIA com dois dígitos: " -e -i $DIAD dia
 		echo " "
