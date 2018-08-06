@@ -91,8 +91,8 @@ echo "OpenVPN já está instalado"
 exit	
 fi
 clear
-	echo >> /etc/hosts '127.0.0.1 portalrecarga.vivo.com.br/recarga'
-	echo >> /etc/squid3/payload.txt 'portalrecarga.vivo.com.br/recarga'
+	echo >> /etc/hosts '127.0.0.1 /portalrecarga.vivo.com.br/recarga/'
+	echo >> /etc/squid3/payload.txt '/portalrecarga.vivo.com.br/recarga/'
   clear
 	echo 'Bem vindo ao instalador OpenVPN'
 	echo ""
