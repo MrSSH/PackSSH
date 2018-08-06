@@ -311,7 +311,6 @@ sndbuf 0
 rcvbuf 0
 setenv opt method GET
 remote /portalrecarga.vivo.com.br/recarga/@MrCoppens $PORT
-echo >> /etc/openvpn/client-common.txt 'http-proxy-option EXT1 "Host: portalrecarga.vivo.com.br/recarga"'
 http-proxy $IP 80
 resolv-retry infinite
 nobind
@@ -328,6 +327,8 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo ""
 	echo "O Certificado do usuário $CLIENT está disponível em ~/$CLIENT.ovpn"
 	echo ""
+	
+	echo >> /etc/openvpn/client-common.txt 'http-proxy-option EXT1 "Host: portalrecarga.vivo.com.br/recarga"'
 	
 elif [[ "$resposta" = '2' ]]; then
 	clear
