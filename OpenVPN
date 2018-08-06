@@ -322,13 +322,12 @@ comp-lzo
 setenv opt block-outside-dns
 key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
+echo >> /etc/openvpn/client-common.txt 'http-proxy-option EXT1 "Host: portalrecarga.vivo.com.br/recarga"'
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
 	echo "O Certificado do usuário $CLIENT está disponível em ~/$CLIENT.ovpn"
 	echo ""
-	
-	echo >> /etc/openvpn/client-common.txt 'http-proxy-option EXT1 "Host: portalrecarga.vivo.com.br/recarga"'
 	
 elif [[ "$resposta" = '2' ]]; then
 	clear
