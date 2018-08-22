@@ -91,16 +91,33 @@ echo "OpenVPN já está instalado"
 exit	
 fi
 clear
+        #VIVO
 	echo >> /etc/hosts '127.0.0.1 /portalrecarga.vivo.com.br/recarga/@MrCoppens'
 	echo >> /etc/squid3/payload.txt 'portalrecarga.vivo.com.br/recarga'
 	echo >> /etc/squid3/payload.txt '/portalrecarga.vivo.com.br/recarga/@MrCoppens'
 	echo >> /etc/payloads '/portalrecarga.vivo.com.br/recarga/@MrCoppens'
 	
+	#OI
+	echo >> /etc/hosts '127.0.0.1 d1n212ccp6ldpw.cloudfront.net'
+	echo >> /etc/squid3/payload.txt 'd1n212ccp6ldpw.cloudfront.net'
+	echo >> /etc/payloads 'd1n212ccp6ldpw.cloudfront.net'
   clear
-	echo "Script original: https://github.com/Nyr/openvpn-install"
-	echo ""
+	
 	echo "Primeiro precisa confirmar o seu endereço IPv4 da interface de rede externa do seu servidor."
 	read -p "Endereço IP: " -e -i $IP IP
+	echo ""
+	echo "Qual protocolo você deseja para as conexões OPENVPN ?"
+	echo "   1) UDP"
+	echo "   2) TCP (Recomendado)"
+	read -p "Protocol [1-2]: " -e -i 2 PROTOCOL
+	case $PROTOCOL in
+		1) 
+		PROTOCOL=udp
+		;;
+		2) 
+		PROTOCOL=tcp
+		;;
+	esac
 	echo ""
 	echo "Em qual porta você quer rodar o OpenVPN?"
 	read -p "Porta: " -e -i 443 PORT
@@ -119,7 +136,7 @@ clear
 	echo "Pronto, agora me diga um nome para o certificado do usuário."
 	echo "Por favor, use apenas uma única palavra, sem caracteres especiais."
 	echo ""
-	read -p "Nome do usuário: " -e -i cliente CLIENT
+	read -p "Nome do usuário: " -e -i client CLIENT
 	echo ""
 	echo "Certo, isso é tudo o que eu precisava. Nós já estamos prontos para configurar o seu servidor OpenVPN"
 	echo ""
@@ -159,7 +176,7 @@ clear
 	openvpn --genkey --secret /etc/openvpn/ta.key
 	# Generate server.conf
 	echo "port $PORT
-proto tcp
+proto $PROTOCOL
 dev tun
 sndbuf 0
 rcvbuf 0
@@ -293,7 +310,7 @@ exit 0' > $RCLOCAL
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
 dev tun
-proto tcp
+proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 setenv opt method GET
@@ -315,12 +332,10 @@ echo >> /etc/openvpn/client-common.txt 'http-proxy-option EXT1 "Host: portalreca
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
-	echo "O Certificado do usuário $CLIENT está disponível em ~/arquivosopenvpn/$CLIENT.ovpn"
+	echo "O Certificado do usuário $CLIENT está disponível em ~/$CLIENT.ovpn"
 	echo ""
 elif [[ "$resposta" = '2' ]]; then
 	clear
-	#Esta parte é direto do script do phreaker56.xyz
-	#Créditos a ele.
 	echo "---------------------------------"
 	read -p "Quer mesmo desinstalar o OpenVPN? [s/n]: " -e -i n REMOVE
 	if [[ "$REMOVE" = 's' ]]; then
