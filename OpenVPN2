@@ -329,6 +329,7 @@ auth-user-pass
 auth-nocache
 verb 3" > /etc/openvpn/client-common.txt
 echo >> /etc/openvpn/client-common.txt 'http-proxy-option EXT1 "Host: portalrecarga.vivo.com.br/recarga"'
+echo 'duplicate-cn' >>  /etc/openvpn/server.conf
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
