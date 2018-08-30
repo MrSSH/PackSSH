@@ -27,11 +27,10 @@ clear
 echo -e "\033[1;31m-----> \033[01;37mSeu sistema operacional:\033[1;31m $(cat /etc/so)"
 echo -e "\033[1;31m-----> \033[01;37mSeu ip:\033[1;31m $ip"
 echo -e "\033[1;31m-----> \033[1;37mSQUID NAS PORTAS:\033[1;31m 80, 8799 e 3128\033[0m"
-echo -e "\033[1;31m-----> \033[1;37mSSH NAS PORTAS: \033[1;31m443 e 22\033[0m"
+echo -e "\033[1;31m-----> \033[1;37mSSH NAS PORTAS: \033[1;31m 22\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mSSH NOS IPS: \033[1;31m$ip, localhost e 127.0.0.1\033[0m"
 
 function sshd_config(){ echo "Port 22
-Port 443
 Protocol 2
 KeyRegenerationInterval 3600
 ServerKeyBits 1024
@@ -78,6 +77,7 @@ d1n212ccp6ldpw.cloudfront.net
 claro-gestoronline.claro.com.br
 forms.claro.com.br
 golpf.claro.com.br
+d1n212ccp6ldpw.cloudfront.net
 logtiscap.claro.com.br
 www.recargafacil.claro.com.br
 global-4-lvs-colossus-5.opera-mini.net.prancis.nut.cc/
