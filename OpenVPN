@@ -97,7 +97,7 @@ clear
 	echo >> /etc/squid3/payload.txt '/portalrecarga.vivo.com.br/recarga/@MrCoppens'
 	echo >> /etc/payloads '/portalrecarga.vivo.com.br/recarga/@MrCoppens'
 	
-	#OI
+        #OI
 	echo >> /etc/hosts '127.0.0.1 d1n212ccp6ldpw.cloudfront.net'
 	echo >> /etc/squid3/payload.txt 'd1n212ccp6ldpw.cloudfront.net'
 	echo >> /etc/payloads 'd1n212ccp6ldpw.cloudfront.net'
