@@ -133,6 +133,8 @@ sleep 3
   ferramentas;;
   
   10)
-  python socks.py
+  rm socks.py
+  wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/socks.py && python socks.py
+
   ferramentas;;
 esac
