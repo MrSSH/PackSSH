@@ -6,65 +6,78 @@ echo -e "\033[1;34m           ____            _     ____ ____  _   _            
 echo -e "\033[1;34m          |  _ \ __ _  ___| | __/ ___/ ___|| | | | Dev:   @MrCoppens  \033[0m" 
 echo -e "\033[1;34m          | |_) / _  |/ __| |/ /\___ \___ \| |_| | CoDev: @Glemysson  \033[0m" 
 echo -e "\033[1;34m          |  __/ (_| | (__|   <  ___) |__) |  _  |                    \033[0m" 
-echo -e "\033[1;34m          |_|   \__,_|\___|_|\_\|____/____/|_| |_| V. 1.3 Beta        \033[0m"
+echo -e "\033[1;34m          |_|   \__,_|\___|_|\_\|____/____/|_| |_| V. 1.5 Beta        \033[0m"
 echo -e "\033[1;30m----------------------------------------------------------------------\033[0m"
 
 sleep 5
 
 tput setaf 8 ; tput setab 5 ; tput bold ; printf '%30s%s%-15s\n' "INSTALANDO PACKSSH" ; tput sgr0
+echo ""
 
-
-apt-get update &>/dev/null && echo -e '[=         ][10%] Progresso'
-apt-get install bc &>/dev/null && echo -e '[==        ][20%] Progresso'
-apt-get install nano &>/dev/null && echo -e '[===       ][30%] Progresso'
-apt-get install htop &>/dev/null && echo -e '[====      ][40%] Progresso'
-apt-get install python-pip -y &>/dev/null && echo -e '[=====     ][50%] Progresso'
-pip install speedtest-cli &>/dev/null && echo -e '[======    ][60%] Progresso'
-apt-get install nethogs -y &>/dev/null && echo -e '[=======   ][70%] Progresso'
-apt-get install nload &>/dev/null && echo -e '[========  ][80%] Progresso'
-iptables -F &>/dev/null && echo -e '[========= ][90%] Progresso'
-apt-get install -y python3-pip &>/dev/null && echo -e '[==========][100%] Progresso'
-sleep 2
+apt-get update &>/dev/null && echo -e '[=         ][04%] Progresso'
+apt-get install bc &>/dev/null && echo -e '[=        ][08%] Progresso'
+apt-get install nano &>/dev/null && echo -e '[==       ][12%] Progresso'
+apt-get install htop &>/dev/null && echo -e '[==        ][16%] Progresso'
+apt-get install python-pip -y &>/dev/null && echo -e '[==        ][20%] Progresso'
+pip install speedtest-cli &>/dev/null && echo -e '[===       ][24%] Progresso'
+apt-get install nethogs -y &>/dev/null && echo -e '[===       ][28%] Progresso'
+apt-get install nload &>/dev/null && echo -e '[====      ][32%] Progresso'
+iptables -F &>/dev/null && echo -e '[====      ][36%] Progresso'
+apt-get install -y python3-pip &>/dev/null && echo -e '[====      ][40%] Progresso'
 
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/TesteConexao -O /bin/SpeedTest
-chmod +x /bin/SpeedTest
+chmod +x /bin/SpeedTest &>/dev/null && echo -e '[=====     ][44%] Progresso'
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimiterSSH -O /bin/LimiterSSH
-chmod +x /bin/LimiterSSH
+chmod +x /bin/LimiterSSH &>/dev/null && echo -e '[=====     ][48%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/PackSSH -O /bin/PackSSH
-chmod +x /bin/PackSSH
+chmod +x /bin/PackSSH &>/dev/null && echo -e '[======    ][52%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/ferramentas -O /bin/ferramentas
-chmod +x /bin/ferramentas
+chmod +x /bin/ferramentas &>/dev/null && echo -e '[======    ][58%] Progresso'
+
+sleep 2
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimpadorCache -O /bin/ClearCache
-chmod +x /bin/ClearCache
+chmod +x /bin/ClearCache &>/dev/null && echo -e '[=======   ][62%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenUdp -O /bin/OpenUDP
-chmod +x /bin/OpenUDP
+chmod +x /bin/OpenUDP &>/dev/null && echo -e '[=======   ][66%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserBackup -O /bin/UserBackup
-chmod +x /bin/UserBackup
+chmod +x /bin/UserBackup &>/dev/null && echo -e '[=======   ][70%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/Squid3 -O /bin/Squid3
-chmod +x /bin/Squid3
+chmod +x /bin/Squid3 &>/dev/null && echo -e '[========  ][74%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenVPN -O /bin/OpenVPN
-chmod +x /bin/OpenVPN
+chmod +x /bin/OpenVPN &>/dev/null && echo -e '[========  ][78%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserCreate -O /bin/UserCreate
-chmod +x /bin/UserCreate
+chmod +x /bin/UserCreate &>/dev/null && echo -e '[========= ][82%] Progresso'
+
+sleep 1
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciarusers -O /bin/gerenciarusers
-chmod +x /bin/gerenciarusers
+chmod +x /bin/gerenciarusers &>/dev/null && echo -e '[========= ][86%] Progresso'
+
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciadorovpn
-chmod +x /bin/gerenciadorovpn
+chmod +x /bin/gerenciadorovpn &>/dev/null && echo -e '[==========][92%] Progresso'
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/socks.py -O /bin/socks.py
-chmod +x /bin/socks.py
+sleep 2
+
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/socks.py &>/dev/null && echo -e '[===========][100%] Progresso'
+
 clear
 
 
