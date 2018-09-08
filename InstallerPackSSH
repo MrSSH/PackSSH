@@ -63,8 +63,10 @@ chmod +x /bin/gerenciarusers
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciadorovpn
 chmod +x /bin/gerenciadorovpn
 
-
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/socks.py -O /bin/proxy
+chmod +x /bin/proxy
 clear
+
 
 
 
