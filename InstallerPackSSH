@@ -26,53 +26,53 @@ iptables -F &>/dev/null && echo -e '[====      ][36%] Progresso'
 apt-get install -y python3-pip &>/dev/null && echo -e '[====      ][40%] Progresso'
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/TesteConexao -O /bin/SpeedTest
-chmod +x /bin/SpeedTest &>/dev/null && echo -e '[=====     ][44%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/TesteConexao -O /bin/SpeedTest &>/dev/null && echo -e '[=====     ][44%] Progresso'
+chmod +x /bin/SpeedTest &>/dev/null && echo -e 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimiterSSH -O /bin/LimiterSSH
-chmod +x /bin/LimiterSSH &>/dev/null && echo -e '[=====     ][48%] Progresso'
-
-
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/PackSSH -O /bin/PackSSH
-chmod +x /bin/PackSSH &>/dev/null && echo -e '[======    ][52%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimiterSSH -O /bin/LimiterSSH &>/dev/null && echo -e '[=====     ][48%] Progresso'
+chmod +x /bin/LimiterSSH &>/dev/null && echo -e 
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/ferramentas -O /bin/ferramentas
-chmod +x /bin/ferramentas &>/dev/null && echo -e '[======    ][58%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/PackSSH -O /bin/PackSSH &>/dev/null && echo -e '[======    ][52%] Progresso'
+chmod +x /bin/PackSSH &>/dev/null && echo -e 
+
+
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/ferramentas -O /bin/ferramentas &>/dev/null && echo -e '[======    ][58%] Progresso'
+chmod +x /bin/ferramentas &>/dev/null && echo -e 
 
 sleep 2
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimpadorCache -O /bin/ClearCache
-chmod +x /bin/ClearCache &>/dev/null && echo -e '[=======   ][62%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimpadorCache -O /bin/ClearCache &>/dev/null && echo -e '[=======   ][62%] Progresso'
+chmod +x /bin/ClearCache &>/dev/null && echo -e 
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenUdp -O /bin/OpenUDP
-chmod +x /bin/OpenUDP &>/dev/null && echo -e '[=======   ][66%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenUdp -O /bin/OpenUDP &>/dev/null && echo -e '[=======   ][66%] Progresso'
+chmod +x /bin/OpenUDP &>/dev/null && echo -e 
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserBackup -O /bin/UserBackup
-chmod +x /bin/UserBackup &>/dev/null && echo -e '[=======   ][70%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserBackup -O /bin/UserBackup &>/dev/null && echo -e '[=======   ][70%] Progresso'
+chmod +x /bin/UserBackup &>/dev/null && echo -e 
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/Squid3 -O /bin/Squid3
-chmod +x /bin/Squid3 &>/dev/null && echo -e '[========  ][74%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/Squid3 -O /bin/Squid3 &>/dev/null && echo -e '[========  ][74%] Progresso'
+chmod +x /bin/Squid3 &>/dev/null && echo -e 
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenVPN -O /bin/OpenVPN
-chmod +x /bin/OpenVPN &>/dev/null && echo -e '[========  ][78%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenVPN -O /bin/OpenVPN &>/dev/null && echo -e '[========  ][78%] Progresso'
+chmod +x /bin/OpenVPN &>/dev/null && echo -e 
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserCreate -O /bin/UserCreate
-chmod +x /bin/UserCreate &>/dev/null && echo -e '[========= ][82%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserCreate -O /bin/UserCreate &>/dev/null && echo -e '[========= ][82%] Progresso'
+chmod +x /bin/UserCreate &>/dev/null && echo -e 
 
 sleep 1
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciarusers -O /bin/gerenciarusers
-chmod +x /bin/gerenciarusers &>/dev/null && echo -e '[========= ][86%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciarusers -O /bin/gerenciarusers &>/dev/null && echo -e '[========= ][86%] Progresso'
+chmod +x /bin/gerenciarusers &>/dev/null && echo -e 
 
 
-wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciadorovpn
-chmod +x /bin/gerenciadorovpn &>/dev/null && echo -e '[==========][92%] Progresso'
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciadorovpn &>/dev/null && echo -e '[==========][92%] Progresso'
+chmod +x /bin/gerenciadorovpn &>/dev/null && echo -e 
 
 sleep 2
 
