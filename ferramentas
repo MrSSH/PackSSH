@@ -133,6 +133,6 @@ sleep 3
   ferramentas;;
   
   10)
-  proxy
+  python proxy.py
   ferramentas;;
 esac
