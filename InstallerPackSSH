@@ -63,16 +63,16 @@ chmod +x /bin/OpenVPN &>/dev/null
 
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserCreate -O /bin/UserCreate &>/dev/null && echo -e '[========= ][82%] Progresso'
-chmod +x /bin/UserCreate &>/dev/null && echo -e 
+chmod +x /bin/UserCreate &>/dev/null 
 
 sleep 1
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciarusers -O /bin/gerenciarusers &>/dev/null && echo -e '[========= ][86%] Progresso'
-chmod +x /bin/gerenciarusers &>/dev/null && echo -e 
+chmod +x /bin/gerenciarusers &>/dev/null 
 
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/gerenciadorovpn -O /bin/gerenciadorovpn &>/dev/null && echo -e '[==========][92%] Progresso'
-chmod +x /bin/gerenciadorovpn &>/dev/null && echo -e 
+chmod +x /bin/gerenciadorovpn &>/dev/null  
 
 sleep 2
 
