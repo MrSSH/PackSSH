@@ -122,6 +122,7 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   ferramentas;;
   
   08)
+  screen
   python socks.py
   
   09)
