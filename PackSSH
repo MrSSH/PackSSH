@@ -24,7 +24,7 @@ freeram=$(free | grep Mem | awk '{print $3}')
 swapram=$( cat /proc/meminfo | grep SwapTotal | awk '{print $2}')
 
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
-echo -e "\033[47;30m                    PACK SSH v1.3 Beta                  \033[0m"
+echo -e "\033[47;30m                    PACK SSH v1.5 Beta                  \033[0m"
 echo -e "\033[0;32m_________________________________________________________\033[0;32m"
 echo -e "\033[47;30mDEVELOPER MRSSH e CO-DEVELOPER GLEMYSSON                \033[0m"
 echo -e "\033[0mSISTEMA OPERACIONAL:\033[1;31m $(cat /etc/os-release | grep 'PRETTY_NAME' | cut -d= -f2 | sed 's/\"(*//g')\033[0m"
