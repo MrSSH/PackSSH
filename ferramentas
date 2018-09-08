@@ -123,6 +123,7 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   
   08)
   python socks.py
+  ferramentas;;
   
   09)
   addhost
