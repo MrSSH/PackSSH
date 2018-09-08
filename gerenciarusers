@@ -254,5 +254,5 @@ done
 tput sgr0 
 echo ""
 sleep 1
-gerenciadorusers;;
+gerenciarusers;;
 esac
