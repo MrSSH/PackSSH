@@ -36,7 +36,7 @@ echo -e "|04| \033[01;34mTESTE DE CONEXAO\033[01;34m"
 echo -e "|05| \033[01;34mUSO DE CPU, RAM e PROCESSOS DA MAQUINA\033[01;34m"
 echo -e "|06| \033[01;34mCONFIGURAR SQUID 3\033[01;34m"
 echo -e "|07| \033[01;34mCONFIGURAR OPENVPN\033[01;34m"
-echo -e "|08| \033[01;34mCONFIGURAR SOCKS PROXY\033[01;34m"
+echo -e "|08| \033[01;34mCONFIGURAR SOCKS PROXY(ENTRE NA SCREEN ANTES)\033[01;34m"
 echo -e "|09| \033[01;34mADICIONAR HOST DA PAYLOAD\033[01;34m"
 echo -e "|10| \033[01;34mLIMITAR CONEXOES SIMULTANEAS POR USUARIO\033[01;34m"
 echo""
@@ -122,7 +122,7 @@ echo -e "\033[01;31mLimpeza do Cache e Swap concluida\033[0m"
   ferramentas;;
   
   08)
-  sudo screen -dmS socks python socks.py && screen -x socks
+  python socks.py
   
   09)
   addhost
