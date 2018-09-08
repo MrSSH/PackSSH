@@ -131,4 +131,8 @@ sudo screen -dmS limiterssh bash LimiterSSH
 echo "INICIADO A LIMITAÇÃO COM SUCESSO"
 sleep 3
   ferramentas;;
+  
+  10)
+  proxy
+  ferramentas;;
 esac
