@@ -46,8 +46,13 @@ sleep 2
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/LimpadorCache -O /bin/ClearCache &>/dev/null && echo -e '[=======   ][62%] Progresso'
 chmod +x /bin/ClearCache &>/dev/null  
 
+
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenUdp -O /bin/OpenUDP &>/dev/null && echo -e '[=======   ][66%] Progresso'
 chmod +x /bin/OpenUDP &>/dev/null  
+
+
+wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/OpenInstallerNew -O /bin/OpenInstallerNew &>/dev/null && echo -e '[========  ][68%] Progresso'
+chmod +x /bin/OpenInstallerNew &>/dev/null 
 
 
 wget https://raw.githubusercontent.com/MrSSH/PackSSH/master/UserBackup -O /bin/UserBackup &>/dev/null && echo -e '[=======   ][70%] Progresso'
